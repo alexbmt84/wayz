@@ -1,0 +1,52 @@
+body {
+    background: rgb(240,240,240);
+    background: linear-gradient(180deg, rgba(240,240,240,1) 0%, rgba(240,240,240,1) 47%, rgba(255,255,255,1) 100%);
+}
+
+.container {
+    max-width: 100%;
+    /* border: 1px solid #333; */
+    display: grid;
+    grid-template-columns: 240px 1300px 165px 115px;
+    grid-template-rows: 120px 280px;
+    justify-content: center;
+    grid-gap: 30px;
+}
+
+.grid-item-logo {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    align-self: center;
+    text-align: center;
+}
+
+.grid-item-sidebar {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    align-self: baseline;
+    list-style: none;
+    text-align: center;
+    font-family: 'Krona One';
+    color: black;
+    font-size: 16px;
+}
+
+.line1 {
+    grid-row: 1 / 2;
+    grid-column: 2 / 4;
+    padding-top: 120px;
+
+}
+
+.profile {
+    padding-top: 40px;
+}
+
+.feed {
+    padding-top: 40px;
+}
+
+.map {
+    padding-top: 40px;
+}
+
