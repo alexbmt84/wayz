@@ -39,35 +39,35 @@ if (isset($_SESSION['user']) && isset($_SESSION['user-id'])) {
             // Eventuellement pour les pièces jointes ...
             $pieceJointe = "";
             // Traitement de l'upload des pièces jointes si nécessaire ...
-            if ($_FILES["piece-jointe"]["name"] != "") {
-                $uploadDir = "uploads/";
+            // if ($_FILES["piece-jointe"]["name"] != "") {
+            //     $uploadDir = "uploads/";
 
-                // Création d'un dossier pour les téléversements si inexistant...
-                if (!file_exists($uploadDir))
-                    mkdir($uploadDir);
+            //     // Création d'un dossier pour les téléversements si inexistant...
+            //     if (!file_exists($uploadDir))
+            //         mkdir($uploadDir);
 
-                // chemin vers le fichier téléversé temporaire
-                $tmpFile = $_FILES["piece-jointe"]["tmp_name"];
-                $trueName = $_FILES["piece-jointe"]["name"];
-                $pieceJointe = $uploadDir . basename($trueName);
+            //     // chemin vers le fichier téléversé temporaire
+            //     $tmpFile = $_FILES["piece-jointe"]["tmp_name"];
+            //     $trueName = $_FILES["piece-jointe"]["name"];
+            //     $pieceJointe = $uploadDir . basename($trueName);
 
-                // Les types de fichiers autorisés...
-                $autorizedTypes = ["image/png", "image/jpg", "image/jpeg", "application/pdf"];
-                $typeMime = strtolower(mime_content_type($tmpFile));
+            //     // Les types de fichiers autorisés...
+            //     $autorizedTypes = ["image/png", "image/jpg", "image/jpeg", "application/pdf"];
+            //     $typeMime = strtolower(mime_content_type($tmpFile));
 
-                // Vérifier le type de fichier envoyé avant de le déplacer vers son emplacement
-                if (in_array($typeMime, $autorizedTypes)) {
-                    if (is_uploaded_file($tmpFile)) {
-                        if ($_FILES["piece-jointe"]["size"] < 2000000) {
-                            move_uploaded_file($tmpFile, $pieceJointe);
-                        } else {
-                            echo "Fichier trop gros !";
-                        }
-                    }
-                } else {
-                    echo "Type de fichier non autorisé !";
-                }
-            }
+            //     // Vérifier le type de fichier envoyé avant de le déplacer vers son emplacement
+            //     if (in_array($typeMime, $autorizedTypes)) {
+            //         if (is_uploaded_file($tmpFile)) {
+            //             if ($_FILES["piece-jointe"]["size"] < 2000000) {
+            //                 move_uploaded_file($tmpFile, $pieceJointe);
+            //             } else {
+            //                 echo "Fichier trop gros !";
+            //             }
+            //         }
+            //     } else {
+            //         echo "Type de fichier non autorisé !";
+            //     }
+            // }
 
             // Génération et stockage du message
             $message = new Message();

@@ -111,7 +111,7 @@ class Friend{
         }
     }
 
-    // CANCLE FRIEND REQUEST
+    // CANCEL FRIEND REQUEST
     public function cancel_or_ignore_friend_request($my_id, $user_id){
         
         try{
