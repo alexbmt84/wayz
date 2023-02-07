@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once "core/database.class.php";
 ?>
 
 <!DOCTYPE html>
@@ -29,12 +30,30 @@ session_start();
                 if ($currentUser->id > 0) {
                     $_SESSION["user-id"] = $currentUser->id;
                     $_SESSION["user"] = $currentUser->token;
+
+                    // L'utilisateur est connecté...
+
+                    $db_obj = new Database();
+                    $db_connection = $db_obj->dbConnection();
+                    $user_id = $_SESSION["user-id"];
+
+                    $sql = "UPDATE utilisateurs SET online = 1 WHERE id = :user_id";
+
+                    $stmt = $db_connection->prepare($sql);
+                    $stmt->execute(array(':user_id' => $user_id));
+
                     header('Location: landing.php?page=home');
+
                 } else {
+
                     header('Location: login.php?login_err=password');
+
                 } 
+
             } else {
+
                 echo "Pas le bon format d'email";
+
             }
         }
     ?>

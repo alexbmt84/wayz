@@ -245,6 +245,32 @@ class Friend{
     }
 
 
+
+    public static function countFriends(int $id) {
+        // Requête SQL à executer
+        $sql = "SELECT COUNT(*)
+                FROM friends
+                WHERE (user_one = :my_id OR user_two = :my_id)";
+    
+        try {
+            // connexion à la base de données
+            $connexion = new PDO("mysql: host=localhost; port=3306; dbname=testwayz; charset=utf8", "root", "");
+    
+            $requete = $connexion-> prepare($sql);
+            $requete-> bindParam(":my_id", $id, PDO::PARAM_INT);
+    
+            $requete-> execute();
+    
+            $friend_count = $requete->fetchColumn();
+    
+            return $friend_count;
+    
+        } catch (PDOException $e) {
+            die($e->getMessage());
+        }
+    }
+
+
     /*******************************      FOLLOW      ************************/
 
     

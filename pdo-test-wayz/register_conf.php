@@ -40,12 +40,13 @@ require 'core/init.php'; // Securiser plus ????
                               ATTENTION
                             */
                             // On insère dans la base de données
-                            $insert = $connexion->prepare('INSERT INTO utilisateurs(pseudo, email, password, token) VALUES(:pseudo, :email, :password, :token)');
+                            $insert = $connexion->prepare('INSERT INTO utilisateurs(pseudo, email, password, token, online) VALUES(:pseudo, :email, :password, :token, :online)');
                             $insert->execute(array(
                                 'pseudo' => $pseudo,
                                 'email' => $email,
                                 'password' => $password,
-                                'token' => bin2hex(openssl_random_pseudo_bytes(64))
+                                'token' => bin2hex(openssl_random_pseudo_bytes(64)),
+                                'online' => 0
                             ));
 
                             

@@ -30,7 +30,7 @@
           <li><a id="style-2" href="feed.php" data-replace="FEED" href="">FEED</a></li>
           <li><a id="style-2" href="projects.php" data-replace="PROJECTS" href="">PROJECTS</a></li>
           <li><a id="style-2" href="notifications.php" data-replace="FRIENDS" href="">FRIENDS</a></li>
-          <li><a id="style-2" href="./?page=logout" data-replace="DECONNEXION" href='logout.php'>DECONNEXION</a></li> 
+          <li><a id="style-2" data-replace="DECONNEXION" href="logout.php">DECONNEXION</a></li> 
           <div class="globalsearch">
             <li>
               <form class="formsearch" method="get" action="search.php" onsubmit="return validateField()"> <!-- Ensure there are no enter escape characters.-->

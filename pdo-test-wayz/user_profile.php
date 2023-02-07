@@ -5,6 +5,8 @@ if (isset($_SESSION['user']) && isset($_SESSION['user-id'])) {
 
     $user_data = $user_obj->findByiD($_GET['id']); // ou $_GET 'id'
     $userProjects = Project::findUserProject($user_data->id);
+    $countFriends = Friend::countFriends($user_data->id);
+
 
     if ($user_data ===  false) {
       header('Location: landing.php');
@@ -141,8 +143,8 @@ $get_frnd_num = $frnd_obj->get_all_friends($_SESSION['user-id'], false);
         <p class="numbers">20</p>
       </li>
       <li class="list">
-        <a class="text">FOLLOWS</a>
-        <p class="numbers">936</p>
+        <a class="text">FRIENDS</a>
+        <p class="numbers"><?= $countFriends; ?></p>
       </li>
       <li class="list">
         <a class="text">COLLABS</a>

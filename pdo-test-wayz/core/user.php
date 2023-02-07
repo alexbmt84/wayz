@@ -9,6 +9,7 @@
         private ?string $avatar;
         private ?string $prenom;
         private ?string $nom;
+        private int $online;
         private Datetime $dateInscription;
 
         public function __construct() {
@@ -20,6 +21,7 @@
             $this->avatar = "";
             $this->prenom = "";
             $this->nom = "";
+            $this->online = "0";
             $this->dateInscription = new Datetime();
         }
 
@@ -265,6 +267,16 @@
             return $default;
         }
     }
+
+    // /***********************************************************  USER STATUS  **********************************************************************/
+
+    // public function userStatus() : string {
+    //     if ($this->online == 0) {
+    //         return "Not Logged In";
+    //     } else {
+    //         return "Logged In";
+    //     }
+    // }
 }
 
     
