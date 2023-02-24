@@ -23,7 +23,7 @@ Features
   1. Clone the repository from GitHub :
   
   ```bash
-  git clone https://github.com/your-username/wayz.git
+  git clone https://github.com/alexbmt84/wayz.git
   ```
   
   2. Import the database by adding the SQL file to your database server. The SQL file can be found in the folder of the repository.
