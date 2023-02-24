@@ -1,6 +1,6 @@
 # Wayz Social Network for Music Collaboration
 
-## Wayz is a social network for musicians to connect, collaborate and share their music with other musicians around the world. The platform allows musicians to find like-minded artists, create and join bands, share their music and collaborate on new songs.
+## Wayz is a social network for musicians to connect, collaborate and share their music with other musicians around the world. The platform allows musicians to find like-minded artists, share their music and collaborate on new songs.
 
 This is a PHP-based web application that provides a simple and intuitive user interface for musicians to connect with other musicians and showcase their music. The website allows musicians to create a profile and upload their music, which can be searched and played by other users.
 Features
